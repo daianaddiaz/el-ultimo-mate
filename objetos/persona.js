@@ -1,19 +1,20 @@
-import { GameObject } from "./gameObject.js";
+import { GameObject } from './GameObject.js';
+
 export class Persona extends GameObject {
-  constructor(textureKey, x, y, velocidad = 5) {
+    constructor(textureKey, x, y, velocidad = 4) {
         super(textureKey, x, y);
         this.velocidad = velocidad;
         
-        // Estado de las teclas
+        // Estado de los inputs
         this.teclas = { w: false, a: false, s: false, d: false };
         
-        // Límites donde se puede mover // se verificara con la barra
+        // Límites iniciales por defecto
         this.limites = { minX: 0, maxX: 800, minY: 0, maxY: 600 };
 
-        this.configurarTeclado();
+        this.escucharTeclado();
     }
 
-    configurarTeclado() {
+    escucharTeclado() {
         window.addEventListener('keydown', (e) => {
             const key = e.key.toLowerCase();
             if (key in this.teclas) this.teclas[key] = true;
@@ -25,24 +26,23 @@ export class Persona extends GameObject {
         });
     }
 
-    setLimites(minX, maxX, minY, maxY) {
+    definirLimitesMapeo(minX, maxX, minY, maxY) {
         this.limites = { minX, maxX, minY, maxY };
     }
 
-update(ticker){
-
+    update(ticker) {
         const dt = ticker.deltaTime;
 
+        // Movimiento suave con deltaTime
         if (this.teclas.a) this.sprite.x -= this.velocidad * dt;
         if (this.teclas.d) this.sprite.x += this.velocidad * dt;
         if (this.teclas.w) this.sprite.y -= this.velocidad * dt;
         if (this.teclas.s) this.sprite.y += this.velocidad * dt;
 
-        // Limitar la posición del prota para que no se salga de la barra
+        // Traba al personaje dentro del tamaño de la barra
         if (this.sprite.x < this.limites.minX) this.sprite.x = this.limites.minX;
         if (this.sprite.x > this.limites.maxX) this.sprite.x = this.limites.maxX;
         if (this.sprite.y < this.limites.minY) this.sprite.y = this.limites.minY;
         if (this.sprite.y > this.limites.maxY) this.sprite.y = this.limites.maxY;
-  }
-
+    }
 }
