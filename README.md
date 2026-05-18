@@ -18,6 +18,8 @@ Podés consultar el documento de diseño del juego acá:
 
 ➡️ Ver GDD del proyecto
 
+https://docs.google.com/document/d/1d8WwRAPIRuH7UrvwWmYOnVeKTKZO2TEDEQPHsTK7Wh4/edit?usp=sharing
+
 ### 🛠️ Tecnologías utilizadas
 
 - JavaScript
