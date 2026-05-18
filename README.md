@@ -4,7 +4,7 @@
 
 El Último Mate es un videojuego desarrollado para la materia Programación de Videojuegos I de la Universidad Nacional de Hurlingham (UNAHUR).
 
-El proyecto está siendo realizado por Rodrigo Pinto y Pablo Coronel.
+El proyecto está siendo realizado por Daiana Diaz y Pablo Coronel.
 
 ### 🎮 Sobre el juego
 
