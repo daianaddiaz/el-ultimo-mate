@@ -20,9 +20,9 @@ Podés consultar el documento de diseño del juego acá:
 
 ### 🛠️ Tecnologías utilizadas
 
-JavaScript
-PIXI.js
-Adobe Illustrator
+- JavaScript
+- PIXI.js
+- Adobe Illustrator
 
 ### 📚 Proyecto académico
 
