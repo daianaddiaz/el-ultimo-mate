@@ -14,7 +14,7 @@ class Juego {
     this.pixiApp = new PIXI.Application();
 
     const opcionesDePixi = {
-        background: "#627480",
+        background: "#79b7e0",
         width: this.innerWidth,
         height: this.innerHeight,
     };
@@ -42,7 +42,11 @@ class Juego {
  }
 
  async precargarAssets(){
-   
- }
+   this.protagonista = await PIXI.Assets.load("spritesheets/prota.json");
+   this.estudiante = await PIXI.Assets.load("spritesheets/estudiante.json");
+   this.oficinista = await PIXI.Assets.load("spritesheets/oficinista.json");
+   this.trabajador = await PIXI.Assets.load("spritesheets/trabajador.json");
+   this.vecina = await PIXI.Assets.load("spritesheets/vecina-chusma.json");
+}
 
 }
